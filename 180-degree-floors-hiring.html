@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Now Hiring Installers — 180 Degree Floors | Nashville TN</title>
+<meta name="description" content="180 Degree Floors is hiring experienced flooring installers in Middle Tennessee and North Alabama. Steady work, weekly pay, all trades welcome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Supabase loaded via native fetch — no CDN dependency -->
+
+<style>
+/* ─────────────────────────────────────────
+   RESET & ROOT
+───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  /* VIBRANT PALETTE — fresh start, new opportunity */
+  --navy:     #0B1F3A;      /* deep trust anchor */
+  --navy2:    #132D52;
+  --blue:     #1565C0;      /* action, energy */
+  --blue-mid: #1E88E5;
+  --sky:      #E3F2FD;
+  --orange:   #E65100;      /* urgency, craft */
+  --orange-mid: #F57C00;
+  --orange-light: #FFB74D;
+  --orange-bg: #FFF3E0;
+  --orange-border: #FFCC80;
+  --green:    #1B5E20;      /* growth, go */
+  --green-mid: #2E7D32;
+  --green-light: #A5D6A7;
+  --green-bg: #E8F5E9;
+  --red:      #B71C1C;
+  --red-bg:   #FFEBEE;
+  --red-border: #EF9A9A;
+  --white:    #FFFFFF;
+  --offwhite: #F8FAFF;      /* barely-blue white — feels fresh */
+  --warm:     #FFF8F0;
+  --rule:     #DCE4F0;
+  --ink:      #0A1929;
+  --ink2:     #1A2E44;
+  --mid:      #3D5166;
+  --muted:    #607D9A;
+  --ghost:    #90A8BF;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+/* ─────────────────────────────────────────
+   LANGUAGE TOGGLE
+───────────────────────────────────────── */
+.lang-bar {
+  background: var(--navy);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 8px 18px;
+  gap: 6px;
+}
+.lang-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.5);
+  font-family: 'Barlow', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.lang-btn.active {
+  background: var(--orange-mid);
+  border-color: var(--orange-mid);
+  color: #fff;
+}
+.hidden { display: none !important; }
+
+/* ─────────────────────────────────────────
+   STICKY BAR
+───────────────────────────────────────── */
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 300;
+  background: var(--navy);
+  border-bottom: 3px solid var(--orange-mid);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  gap: 12px;
+}
+.sticky-msg {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.3;
+}
+.sticky-msg span { color: var(--orange-light); }
+.sticky-cta {
+  background: var(--orange-mid);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border-radius: 3px;
+  text-decoration: none;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.sticky-cta:hover { background: var(--orange); }
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--navy2); /* fallback if image blocked */
+  background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=85&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+/* Local image override — drop your Instagram photos next to this HTML file
+   and uncomment the line below. File names from your IG posts. */
+/* .hero-bg { background-image: url('./hero-floor.jpg'); } */
+
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    170deg,
+    rgba(11,31,58,0.15) 0%,
+    rgba(11,31,58,0.78) 50%,
+    rgba(11,31,58,0.97) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 1.25rem 2.75rem;
+  width: 100%;
+}
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange-light);
+  margin-bottom: 1rem;
+}
+.kicker::before {
+  content: '';
+  width: 24px;
+  height: 3px;
+  background: var(--orange-light);
+  display: block;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+.hero h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(3rem, 12vw, 5.5rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 0.93;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.1rem;
+}
+.hero h1 .accent {
+  color: var(--orange-light);
+  display: block;
+}
+.hero-sub {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.65;
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+.hero-sub strong { color: #fff; font-weight: 700; }
+.btn-orange {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--orange-mid);
+  color: #fff;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+  transition: background 0.15s;
+}
+.btn-orange:hover { background: var(--orange); }
+.btn-outline-white {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 13px 24px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.22);
+  text-decoration: none;
+  width: 100%;
+  margin-top: 10px;
+  transition: all 0.15s;
+}
+.btn-outline-white:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
+.trust-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1.6rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.trust-stars { color: var(--orange-light); font-size: 14px; letter-spacing: 3px; }
+.trust-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────
+   OPPORTUNITY BANNER
+───────────────────────────────────────── */
+.opp-banner {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+}
+.opp-banner p {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+.opp-banner p span { color: var(--orange-light); }
+
+/* ─────────────────────────────────────────
+   SECTIONS
+───────────────────────────────────────── */
+.sec { padding: 2.5rem 1.25rem; }
+.sec-offwhite { background: var(--offwhite); }
+.sec-warm { background: var(--warm); }
+.sec-white { background: var(--white); }
+.sec-navy { background: var(--navy); }
+.sec-blue { background: var(--blue); }
+.sec-green { background: var(--green-mid); }
+
+/* ─────────────────────────────────────────
+   TYPE SYSTEM
+───────────────────────────────────────── */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue-mid);
+  margin-bottom: 0.75rem;
+}
+.eyebrow::before {
+  content: '';
+  width: 18px;
+  height: 3px;
+  background: var(--blue-mid);
+  display: block;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+.eyebrow.on-dark { color: var(--orange-light); }
+.eyebrow.on-dark::before { background: var(--orange-light); }
+.eyebrow.on-blue { color: #fff; }
+.eyebrow.on-blue::before { background: rgba(255,255,255,0.6); }
+
+h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2.2rem, 7vw, 3.2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin-bottom: 0.85rem;
+}
+h2.on-dark { color: #fff; }
+h2.on-blue { color: #fff; }
+h2 .accent { color: var(--orange-mid); }
+h2 .accent-green { color: var(--green-light); }
+
+.lead {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--mid);
+  line-height: 1.75;
+  max-width: 480px;
+}
+.lead.on-dark { color: rgba(255,255,255,0.72); }
+
+/* ─────────────────────────────────────────
+   PAIN LIST
+───────────────────────────────────────── */
+.pain-list {
+  margin-top: 1.5rem;
+  border-top: 2px solid var(--rule);
+}
+.pain-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.pain-dash {
+  color: var(--orange-mid);
+  font-size: 22px;
+  font-weight: 900;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: -2px;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+.pain-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink2);
+  line-height: 1.5;
+}
+
+/* BLOCKQUOTE */
+.bq {
+  margin-top: 1.5rem;
+  padding: 1.2rem 1.2rem 1.2rem 1.5rem;
+  background: var(--sky);
+  border-left: 4px solid var(--blue-mid);
+  border-radius: 0 4px 4px 0;
+}
+.bq p {
+  font-size: 15px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--navy2);
+  line-height: 1.7;
+}
+.bq cite {
+  display: block;
+  margin-top: 8px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* ─────────────────────────────────────────
+   PHOTO PANELS
+───────────────────────────────────────── */
+.photo-panel {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  background: var(--navy2);
+}
+.photo-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.photo-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(11,31,58,0.9), transparent);
+  padding: 1.1rem 1.25rem 0.9rem;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
+.photo-mid {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background: var(--navy);
+}
+.photo-mid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.photo-mid-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(21,101,192,0.82) 0%, rgba(11,31,58,0.72) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+.photo-headline {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2rem, 8vw, 3.2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+}
+.photo-headline .accent { color: var(--orange-light); display: block; }
+
+/* ─────────────────────────────────────────
+   AVATAR CARD
+───────────────────────────────────────── */
+.av-card {
+  background: var(--sky);
+  border: 2px solid rgba(21,101,192,0.2);
+  border-radius: 6px;
+  padding: 1.25rem;
+  margin-top: 1.5rem;
+}
+.av-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+}
+.av-headline {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--navy);
+  line-height: 1.05;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.01em;
+}
+.av-body {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--mid);
+  line-height: 1.65;
+}
+.trade-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 1.25rem;
+}
+.trade-tag {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--blue);
+  border: 2px solid rgba(21,101,192,0.3);
+  padding: 5px 13px;
+  border-radius: 3px;
+  background: var(--sky);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────
+   STAT GRID
+───────────────────────────────────────── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--rule);
+  border: 2px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+.stat-cell {
+  background: var(--white);
+  padding: 1.4rem 1rem;
+  text-align: center;
+}
+.stat-n {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--blue);
+  line-height: 1;
+  margin-bottom: 3px;
+  letter-spacing: 0.02em;
+}
+.stat-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.stat-desc {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* ─────────────────────────────────────────
+   REQUIREMENTS
+───────────────────────────────────────── */
+.req-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.req-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 13px 14px;
+  background: var(--green-bg);
+  border: 1.5px solid var(--green-light);
+  border-radius: 4px;
+}
+.req-check {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--green-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.req-check svg {
+  width: 13px;
+  height: 13px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.req-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.req-desc {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--mid);
+  line-height: 1.5;
+}
+.disq {
+  background: var(--red-bg);
+  border: 2px solid var(--red-border);
+  border-radius: 4px;
+  padding: 1.1rem 1.2rem;
+}
+.disq-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+.disq-item {
+  font-size: 13px;
+  font-weight: 600;
+  color: #7A1A10;
+  line-height: 1.55;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(183,28,28,0.1);
+  display: flex;
+  gap: 8px;
+}
+.disq-item:last-child { border: none; padding-bottom: 0; }
+.disq-dash { color: var(--red); font-weight: 900; flex-shrink: 0; }
+
+/* ─────────────────────────────────────────
+   TESTIMONIAL
+───────────────────────────────────────── */
+.proof-card {
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  background: rgba(255,255,255,0.05);
+}
+.proof-mark {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--orange-light);
+  line-height: 0.55;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+.proof-text {
+  font-size: 16px;
+  font-weight: 600;
+  font-style: italic;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.proof-attr {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ─────────────────────────────────────────
+   STEPS
+───────────────────────────────────────── */
+.step-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.step {
+  display: flex;
+  gap: 14px;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 32px;
+  bottom: 0;
+  width: 2px;
+  background: var(--rule);
+}
+.step-n {
+  width: 30px;
+  height: 30px;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 17px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+.step-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+.step-desc {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ─────────────────────────────────────────
+   INTAKE FORM
+───────────────────────────────────────── */
+.form-card {
+  background: var(--white);
+  border: 2px solid var(--rule);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+.field label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink2);
+}
+.field input,
+.field select {
+  padding: 12px 13px;
+  border: 2px solid #CDD5E0;
+  border-radius: 4px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--offwhite);
+  width: 100%;
+  transition: border-color 0.15s;
+}
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--blue-mid);
+  background: #fff;
+}
+.check-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink2);
+  background: var(--offwhite);
+  border: 2px solid var(--rule);
+  border-radius: 4px;
+  padding: 9px 10px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.check-row:hover { border-color: var(--blue-mid); }
+.check-row input {
+  accent-color: var(--blue);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+.form-fine {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ghost);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.submit-btn {
+  width: 100%;
+  background: var(--blue);
+  color: #fff;
+  font-family: 'Barlow', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.submit-btn:hover { background: var(--navy); }
+.form-success {
+  display: none;
+  background: var(--green-bg);
+  border: 2px solid var(--green-light);
+  border-radius: 6px;
+  padding: 2rem;
+  text-align: center;
+}
+.form-success h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+}
+.form-success p {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--green-mid);
+  line-height: 1.65;
+}
+
+/* ─────────────────────────────────────────
+   FINAL CTA
+───────────────────────────────────────── */
+.final-cta {
+  background: linear-gradient(160deg, var(--navy) 0%, var(--blue) 100%);
+  padding: 3rem 1.25rem;
+  text-align: center;
+}
+.final-cta h2 { color: #fff; margin-bottom: 0.5rem; }
+.final-cta h2 .accent { color: var(--orange-light); }
+.final-sub {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  letter-spacing: 0.02em;
+}
+.phone-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--orange-light);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.25rem;
+}
+.phone-cta svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--orange-light);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.btn-orange-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--orange-mid);
+  color: #fff;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  max-width: 320px;
+  margin: 0 auto;
+  transition: background 0.15s;
+}
+.btn-orange-center:hover { background: var(--orange); }
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+footer {
+  background: var(--ink);
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+footer p {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.25);
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+footer p strong { color: rgba(255,255,255,0.45); }
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — tablet and up
+───────────────────────────────────────── */
+@media (min-width: 640px) {
+  .hero h1 { font-size: 5rem; }
+  h2 { font-size: 3rem; }
+  .stat-grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .check-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en')">English</button>
+  <button class="lang-btn" onclick="setLang('es')">Español</button>
+</div>
+
+<!-- STICKY -->
+<div class="sticky">
+  <div class="sticky-msg" id="s-msg">Steady work. Weekly pay. <span>Middle TN &amp; North AL.</span></div>
+  <a class="sticky-cta" href="tel:6157881379" id="s-cta">Call Now</a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     ENGLISH
+══════════════════════════════════════════ -->
+<div id="en">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg" id="hero-bg-en"></div>
+    <div class="hero-scrim"></div>
+    <div class="hero-content">
+      <div class="kicker">Now Hiring — Middle TN &amp; North Alabama</div>
+      <h1>Stop Chasing<br>Work. We've<br><span class="accent">Got Plenty.</span></h1>
+      <p class="hero-sub">You're a skilled installer who does quality work. You just need a company that <strong>keeps the jobs coming</strong> and pays you every single week — no excuses.</p>
+      <a class="btn-orange" href="tel:6157881379">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.25 7.64a16 16 0 006.11 6.11l1-1a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15v1.92z"/></svg>
+        Call (615) 788-1379
+      </a>
+      <a class="btn-outline-white" href="#apply-en">Fill out the 2-minute form below ↓</a>
+      <div class="trust-strip">
+        <div class="trust-stars">★★★★★</div>
+        <div class="trust-text">4.7 Google Rating · Nashville Since 2008 · Magnolia Network</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPPORTUNITY BANNER -->
+  <div class="opp-banner">
+    <p>New year. New company. <span>New opportunity to build something real.</span></p>
+  </div>
+
+  <!-- PAIN -->
+  <section class="sec sec-offwhite">
+    <div class="eyebrow">Sound familiar?</div>
+    <h2>Tired of the<br><span class="accent">Run-Around?</span></h2>
+    <p class="lead">Your skill isn't the problem. Finding a company with steady work that actually pays on time — that's the problem.</p>
+    <div class="pain-list">
+      <div class="pain-row"><span class="pain-dash">—</span><span class="pain-text">You finish a job and wait weeks to see a check</span></div>
+      <div class="pain-row"><span class="pain-dash">—</span><span class="pain-text">Work dries up and you're calling three subs just to stay busy</span></div>
+      <div class="pain-row"><span class="pain-dash">—</span><span class="pain-text">You do great work and still feel disposable</span></div>
+      <div class="pain-row"><span class="pain-dash">—</span><span class="pain-text">You want one solid company — not five shaky ones</span></div>
+    </div>
+    <div class="bq">
+      <p>180 Degree Floors was built for the installer who is serious about their craft and done with the excuses. If that's you — this is your new beginning.</p>
+      <cite>— 180 Degree Floors · Nashville, TN · Est. 2008</cite>
+    </div>
+  </section>
+
+  <!-- PHOTO 1 — place your Instagram images next to this HTML file as hero-floor.jpg, job1.jpg, job2.jpg -->
+  <div class="photo-panel">
+    <img src="job1.jpg" onerror="this.parentElement.style.minHeight='80px';this.style.display='none'" alt="180 Degree Floors real installation work" loading="lazy">
+    <div class="photo-label">Real work. Real results. 180 Degree Floors.</div>
+  </div>
+
+  <!-- WHO WE WANT -->
+  <section class="sec sec-white">
+    <div class="eyebrow">Who we're looking for</div>
+    <h2>Built for the<br><span class="accent">Serious Craftsman</span></h2>
+    <p class="lead">Middle TN and North Alabama. 5+ years experience. Self-sufficient. Proud of your work. Ready to plant roots with one good company.</p>
+    <div class="av-card">
+      <div class="av-label">Your new beginning starts here</div>
+      <div class="av-headline">"You show up. You do it right.<br>You deserve to be treated that way."</div>
+      <div class="av-body">Your family is counting on stable income. We take that seriously — which is why the work never stops and the check never misses.</div>
+    </div>
+    <div class="trade-row">
+      <span class="trade-tag">Hardwood</span>
+      <span class="trade-tag">LVP / LVT</span>
+      <span class="trade-tag">Tile</span>
+      <span class="trade-tag">Carpet</span>
+      <span class="trade-tag">Commercial</span>
+      <span class="trade-tag">Walls</span>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="sec sec-offwhite">
+    <div class="eyebrow">What we offer</div>
+    <h2>What You Can<br><span class="accent">Count On</span></h2>
+    <p class="lead">No overpromising. Just what matters most when you have a family to provide for.</p>
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="stat-n">52</div>
+        <div class="stat-label">Weeks of work</div>
+        <div class="stat-desc">Year-round — residential, commercial &amp; walls</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-n">7</div>
+        <div class="stat-label">Day pay cycle</div>
+        <div class="stat-desc">Paid weekly. No chasing. No exceptions.</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-n">15+</div>
+        <div class="stat-label">Years in Nashville</div>
+        <div class="stat-desc">Established. Stable. Not going anywhere.</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-n">1</div>
+        <div class="stat-label">Company to rely on</div>
+        <div class="stat-desc">Stop juggling subs. Build something lasting here.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO MID -->
+  <div class="photo-mid">
+    <img src="job2.jpg" onerror="this.style.display='none'" alt="180 Degree Floors job site" loading="lazy">
+    <div class="photo-mid-overlay">
+      <div class="photo-headline">A Fresh Start.<br><span class="accent">A Better Future.</span></div>
+    </div>
+  </div>
+
+  <!-- REQUIREMENTS -->
+  <section class="sec sec-white">
+    <div class="eyebrow">Requirements</div>
+    <h2>What You Need<br><span class="accent">to Qualify</span></h2>
+    <p class="lead">We work with serious professionals. These are non-negotiable before your first job.</p>
+    <div class="req-list">
+      <div class="req-item">
+        <div class="req-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div><div class="req-title">5+ years of install experience</div><div class="req-desc">You know your trade — no training required from our end</div></div>
+      </div>
+      <div class="req-item">
+        <div class="req-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div><div class="req-title">Your own tools</div><div class="req-desc">Come equipped for your trade — we do not supply them</div></div>
+      </div>
+      <div class="req-item">
+        <div class="req-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div><div class="req-title">Reliable vehicle or trailer</div><div class="req-desc">You pick up materials and haul off trash from every job site</div></div>
+      </div>
+      <div class="req-item">
+        <div class="req-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div><div class="req-title">Proof of liability insurance</div><div class="req-desc">Active coverage required before starting any job</div></div>
+      </div>
+      <div class="req-item">
+        <div class="req-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div><div class="req-title">Work as a 1099 independent contractor</div><div class="req-desc">You're your own business — we keep the work flowing to you</div></div>
+      </div>
+    </div>
+    <div class="disq">
+      <div class="disq-label">This is not the right fit if —</div>
+      <div class="disq-item"><span class="disq-dash">—</span>You need same-day pay. We pay weekly, every week, without fail.</div>
+      <div class="disq-item"><span class="disq-dash">—</span>You don't have your own tools or a vehicle capable of hauling materials</div>
+      <div class="disq-item"><span class="disq-dash">—</span>You have fewer than 5 years of professional install experience</div>
+      <div class="disq-item"><span class="disq-dash">—</span>You're outside of Middle Tennessee or North Alabama</div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="sec sec-navy">
+    <div class="eyebrow on-dark">What installers say</div>
+    <h2 class="on-dark">From the <span class="accent">Field</span></h2>
+    <div class="proof-card">
+      <div class="proof-mark">"</div>
+      <p class="proof-text">I was bouncing between three different subs, never knowing what next week looked like. With 180 Degree I know I've got work. And that check shows up every single week without fail. That's all I needed.</p>
+      <div class="proof-attr">Nashville, TN · Hardwood Installer · 3 Years with 180 Degree Floors</div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="sec sec-offwhite">
+    <div class="eyebrow">Simple process</div>
+    <h2>How to Get<br><span class="accent">Started</span></h2>
+    <p class="lead">Three steps. No back-and-forth. No games.</p>
+    <div class="step-list">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div>
+          <div class="step-title">Fill out the form or call us directly</div>
+          <div class="step-desc">Two minutes. Your trade, your experience, and where you work.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div>
+          <div class="step-title">A 10-minute qualification call</div>
+          <div class="step-desc">We confirm your experience, location, and requirements. Straight conversation.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div>
+          <div class="step-title">Get on the schedule and start earning</div>
+          <div class="step-desc">Consistent work matched to your skills. Paid every week from your first completed job.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="sec sec-white" id="apply-en">
+    <div class="eyebrow">Apply now</div>
+    <h2>Two Minutes.<br><span class="accent">That's All It Takes.</span></h2>
+    <p class="lead">Fill this out and we follow up within 24 hours. English and Spanish spoken.</p>
+    <div class="form-card">
+      <form id="form-en" onsubmit="submitForm(event, 'en')">
+        <div class="field">
+          <label for="name-en">Full Name</label>
+          <input id="name-en" type="text" placeholder="Your full name" required>
+        </div>
+        <div class="field">
+          <label for="phone-en">Phone Number</label>
+          <input id="phone-en" type="tel" placeholder="(615) 000-0000" required>
+        </div>
+        <div class="field">
+          <label for="city-en">City / Area You Work In</label>
+          <input id="city-en" type="text" placeholder="Nashville, Murfreesboro, Huntsville…" required>
+        </div>
+        <div class="field">
+          <label for="exp-en">Years of Install Experience</label>
+          <select id="exp-en" required>
+            <option value="">Select</option>
+            <option>5–7 years</option>
+            <option>8–10 years</option>
+            <option>10–15 years</option>
+            <option>15+ years</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Trade Specialty — select all that apply</label>
+          <div class="check-grid">
+            <label class="check-row"><input type="checkbox" name="trade" value="Hardwood"> Hardwood</label>
+            <label class="check-row"><input type="checkbox" name="trade" value="LVP/LVT"> LVP / LVT</label>
+            <label class="check-row"><input type="checkbox" name="trade" value="Tile"> Tile</label>
+            <label class="check-row"><input type="checkbox" name="trade" value="Carpet"> Carpet</label>
+            <label class="check-row"><input type="checkbox" name="trade" value="Commercial"> Commercial</label>
+            <label class="check-row"><input type="checkbox" name="trade" value="Walls"> Walls</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="tools-en">Own Tools &amp; Vehicle?</label>
+          <select id="tools-en" required>
+            <option value="">Select</option>
+            <option>Yes — both tools and vehicle</option>
+            <option>Tools only, no vehicle</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="ins-en">Liability Insurance?</label>
+          <select id="ins-en" required>
+            <option value="">Select</option>
+            <option>Yes, active coverage</option>
+            <option>Not yet — can get it</option>
+            <option>No</option>
+          </select>
+        </div>
+        <p class="form-fine">By submitting you agree to be contacted by 180 Degree Floors via call or text at the number you provide. English and Spanish spoken.</p>
+        <button class="submit-btn" type="submit">Submit My Application →</button>
+      </form>
+      <div class="form-success" id="success-en">
+        <h3>Application Received!</h3>
+        <p>Someone from 180 Degree Floors will be in touch within 24 hours.<br>To talk sooner, call us at <strong>(615) 788-1379</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>Ready to Stop<br>Chasing Work?<br><span class="accent">Call Us Now.</span></h2>
+    <p class="final-sub">Middle Tennessee &amp; North Alabama &nbsp;·&nbsp; English and Spanish &nbsp;·&nbsp; We answer.</p>
+    <a class="phone-cta" href="tel:6157881379">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.25 7.64a16 16 0 006.11 6.11l1-1a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15v1.92z"/></svg>
+      (615) 788-1379
+    </a>
+    <a class="btn-orange-center" href="sms:6157881379">Text "HIRE ME" to apply</a>
+  </section>
+
+  <footer>
+    <p><strong>180 Degree Floors</strong> &nbsp;·&nbsp; Nashville, Tennessee &nbsp;·&nbsp; (615) 788-1379<br>
+    English &amp; Spanish &nbsp;·&nbsp; Middle TN &amp; North Alabama &nbsp;·&nbsp; Licensed &amp; Insured &nbsp;·&nbsp; Est. 2008</p>
+  </footer>
+
+</div><!-- /en -->
+
+
+<!-- ══════════════════════════════════════════
+     ESPAÑOL
+══════════════════════════════════════════ -->
+<div id="es" class="hidden">
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-scrim"></div>
+    <div class="hero-content">
+      <div class="kicker">Contratando — Middle TN y Norte de Alabama</div>
+      <h1>Deja de Buscar<br>Trabajo.<br><span class="accent">Hay de Sobra.</span></h1>
+      <p class="hero-sub">Eres un instalador hábil. Solo necesitas una empresa que <strong>siempre tenga proyectos</strong> y te pague puntual cada semana — sin excusas.</p>
+      <a class="btn-orange" href="tel:6157881379">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.25 7.64a16 16 0 006.11 6.11l1-1a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15v1.92z"/></svg>
+        Llama al (615) 788-1379
+      </a>
+      <a class="btn-outline-white" href="#apply-es">Llena el formulario — 2 minutos ↓</a>
+      <div class="trust-strip">
+        <div class="trust-stars">★★★★★</div>
+        <div class="trust-text">4.7 en Google · Nashville desde 2008 · Magnolia Network</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="opp-banner">
+    <p>Nuevo año. Nueva empresa. <span>Un nuevo comienzo de verdad.</span></p>
+  </div>
+
+  <section class="sec sec-offwhite">
+    <div class="eyebrow">¿Te suena familiar?</div>
+    <h2>¿Cansado de<br><span class="accent">las Excusas?</span></h2>
+    <p class="lead">Tu habilidad no es el problema. Encontrar una empresa con trabajo constante que pague a tiempo — ese es el problema.</p>
+    <div class="pain-list">
+      <div class="pain-row"><span class="pain-dash">—</span><span class="pain-text">Terminas un trabajo y esperas semanas para ver el dinero</span></div>
+      <div class="pain-row"><span class="pain-dash">—</span><span class="pain-text">El trabajo se acaba y andas llamando a tres empresas solo para mantenerte ocupado</span></div>
+      <div class="pain-row"><span class="pain-dash">—</span><span class="pain-text">Haces un excelente trabajo y aun así te tratan como desechable</span></div>
+      <div class="pain-row"><span class="pain-dash">—</span><span class="pain-text">Quieres una empresa sólida — no cinco que no cumplen</span></div>
+    </div>
+    <div class="bq">
+      <p>180 Degree Floors fue creada para el instalador serio que ya se cansó de las excusas. Si eso eres tú — este es tu nuevo comienzo.</p>
+      <cite>— 180 Degree Floors · Nashville, TN · Est. 2008</cite>
+    </div>
+  </section>
+
+  <div class="photo-panel">
+    <img src="job1.jpg" onerror="this.parentElement.style.minHeight='80px';this.style.display='none'" alt="180 Degree Floors trabajo real" loading="lazy">
+    <div class="photo-label">Trabajo real. Resultados reales. 180 Degree Floors.</div>
+  </div>
+
+  <section class="sec sec-white">
+    <div class="eyebrow">A quién buscamos</div>
+    <h2>Para el Profesional<br><span class="accent">que Se Exige</span></h2>
+    <p class="lead">Middle TN y Norte de Alabama. 5+ años de experiencia. Independiente. Orgulloso de tu trabajo. Listo para construir algo sólido con una buena empresa.</p>
+    <div class="av-card">
+      <div class="av-label">Tu nuevo comienzo empieza aquí</div>
+      <div class="av-headline">"Llegas. Lo haces bien.<br>Te mereces que te traten así."</div>
+      <div class="av-body">Tu familia depende de ingresos estables. Nosotros lo tomamos en serio — por eso el trabajo no para y el pago nunca falla.</div>
+    </div>
+    <div class="trade-row">
+      <span class="trade-tag">Madera</span>
+      <span class="trade-tag">LVP / LVT</span>
+      <span class="trade-tag">Cerámica</span>
+      <span class="trade-tag">Alfombra</span>
+      <span class="trade-tag">Comercial</span>
+      <span class="trade-tag">Paredes</span>
+    </div>
+  </section>
+
+  <section class="sec sec-offwhite">
+    <div class="eyebrow">Lo que ofrecemos</div>
+    <h2>En lo que<br><span class="accent">Puedes Contar</span></h2>
+    <p class="lead">Sin promesas vacías. Solo lo que importa cuando tienes una familia que mantener.</p>
+    <div class="stat-grid">
+      <div class="stat-cell"><div class="stat-n">52</div><div class="stat-label">Semanas de trabajo</div><div class="stat-desc">Todo el año — residencial, comercial y paredes</div></div>
+      <div class="stat-cell"><div class="stat-n">7</div><div class="stat-label">Días de pago</div><div class="stat-desc">Pago semanal. Sin excusas. Sin retrasos.</div></div>
+      <div class="stat-cell"><div class="stat-n">15+</div><div class="stat-label">Años en Nashville</div><div class="stat-desc">Establecidos y estables. Aquí para quedarnos.</div></div>
+      <div class="stat-cell"><div class="stat-n">1</div><div class="stat-label">Empresa confiable</div><div class="stat-desc">Deja de saltar entre subs. Construye algo duradero.</div></div>
+    </div>
+  </section>
+
+  <div class="photo-mid">
+    <img src="job2.jpg" onerror="this.style.display='none'" alt="180 Degree Floors" loading="lazy">
+    <div class="photo-mid-overlay">
+      <div class="photo-headline">Un Nuevo Comienzo.<br><span class="accent">Un Mejor Futuro.</span></div>
+    </div>
+  </div>
+
+  <section class="sec sec-white">
+    <div class="eyebrow">Requisitos</div>
+    <h2>Lo que Necesitas<br><span class="accent">Para Calificar</span></h2>
+    <p class="lead">Trabajamos con profesionales serios. Estos requisitos no son negociables antes de tu primer trabajo.</p>
+    <div class="req-list">
+      <div class="req-item"><div class="req-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><div class="req-title">5+ años de experiencia en instalación</div><div class="req-desc">Conoces tu oficio — no necesitas entrenamiento de nuestra parte</div></div></div>
+      <div class="req-item"><div class="req-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><div class="req-title">Tus propias herramientas</div><div class="req-desc">Llega equipado — nosotros no las proporcionamos</div></div></div>
+      <div class="req-item"><div class="req-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><div class="req-title">Vehículo o remolque propio</div><div class="req-desc">Recoges materiales y retiras la basura de cada obra</div></div></div>
+      <div class="req-item"><div class="req-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><div class="req-title">Seguro de responsabilidad civil activo</div><div class="req-desc">Cobertura propia requerida antes de tu primer trabajo</div></div></div>
+      <div class="req-item"><div class="req-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><div class="req-title">Trabajar como contratista independiente 1099</div><div class="req-desc">Eres tu propio negocio — nosotros mantenemos el flujo de trabajo</div></div></div>
+    </div>
+    <div class="disq">
+      <div class="disq-label">Esto no es para ti si —</div>
+      <div class="disq-item"><span class="disq-dash">—</span>Necesitas pago el mismo día. Pagamos semanalmente, sin falta.</div>
+      <div class="disq-item"><span class="disq-dash">—</span>No tienes tus propias herramientas o vehículo para transportar materiales</div>
+      <div class="disq-item"><span class="disq-dash">—</span>Tienes menos de 5 años de experiencia profesional en instalación</div>
+      <div class="disq-item"><span class="disq-dash">—</span>Estás fuera de Middle Tennessee o Norte de Alabama</div>
+    </div>
+  </section>
+
+  <section class="sec sec-navy">
+    <div class="eyebrow on-dark">Lo que dicen los instaladores</div>
+    <h2 class="on-dark">Desde el <span class="accent">Trabajo</span></h2>
+    <div class="proof-card">
+      <div class="proof-mark">"</div>
+      <p class="proof-text">Andaba brincando entre tres empresas distintas, sin saber qué iba a pasar la próxima semana. Con 180 Degree sé que hay trabajo. Y el cheque llega sin falta cada semana. Eso era todo lo que necesitaba.</p>
+      <div class="proof-attr">Nashville, TN · Instalador de Madera · 3 Años con 180 Degree Floors</div>
+    </div>
+  </section>
+
+  <section class="sec sec-offwhite">
+    <div class="eyebrow">Proceso sencillo</div>
+    <h2>Cómo<br><span class="accent">Empezar</span></h2>
+    <p class="lead">Tres pasos. Sin vueltas. Sin juegos.</p>
+    <div class="step-list">
+      <div class="step"><div class="step-n">1</div><div><div class="step-title">Llena el formulario o llámanos directamente</div><div class="step-desc">Dos minutos. Tu especialidad, tu experiencia, dónde trabajas.</div></div></div>
+      <div class="step"><div class="step-n">2</div><div><div class="step-title">Llamada de 10 minutos</div><div class="step-desc">Confirmamos experiencia, ubicación y requisitos. Conversación directa.</div></div></div>
+      <div class="step"><div class="step-n">3</div><div><div class="step-title">Entra al calendario y empieza a ganar</div><div class="step-desc">Trabajo constante según tus habilidades. Pago cada semana desde tu primer trabajo.</div></div></div>
+    </div>
+  </section>
+
+  <section class="sec sec-white" id="apply-es">
+    <div class="eyebrow">Aplica ahora</div>
+    <h2>Dos Minutos.<br><span class="accent">Eso es Todo.</span></h2>
+    <p class="lead">Llena esto y te contactamos en 24 horas. Se habla inglés y español.</p>
+    <div class="form-card">
+      <form id="form-es" onsubmit="submitForm(event, 'es')">
+        <div class="field"><label>Nombre Completo</label><input type="text" placeholder="Tu nombre completo" required></div>
+        <div class="field"><label>Teléfono</label><input type="tel" placeholder="(615) 000-0000" required></div>
+        <div class="field"><label>Ciudad donde trabajas</label><input type="text" placeholder="Nashville, Murfreesboro, Huntsville…" required></div>
+        <div class="field"><label>Años de Experiencia</label>
+          <select required><option value="">Selecciona</option><option>5–7 años</option><option>8–10 años</option><option>10–15 años</option><option>15+ años</option></select>
+        </div>
+        <div class="field"><label>Especialidad — selecciona todas las que apliquen</label>
+          <div class="check-grid">
+            <label class="check-row"><input type="checkbox" name="trade" value="Madera"> Madera</label>
+            <label class="check-row"><input type="checkbox" name="trade" value="LVP/LVT"> LVP / LVT</label>
+            <label class="check-row"><input type="checkbox" name="trade" value="Cerámica"> Cerámica</label>
+            <label class="check-row"><input type="checkbox" name="trade" value="Alfombra"> Alfombra</label>
+            <label class="check-row"><input type="checkbox" name="trade" value="Comercial"> Comercial</label>
+            <label class="check-row"><input type="checkbox" name="trade" value="Paredes"> Paredes</label>
+          </div>
+        </div>
+        <div class="field"><label>¿Tienes herramientas y vehículo propios?</label>
+          <select required><option value="">Selecciona</option><option>Sí — herramientas y vehículo</option><option>Solo herramientas</option><option>No</option></select>
+        </div>
+        <div class="field"><label>¿Tienes seguro de responsabilidad civil?</label>
+          <select required><option value="">Selecciona</option><option>Sí, cobertura activa</option><option>Todavía no, puedo obtenerlo</option><option>No</option></select>
+        </div>
+        <p class="form-fine">Al enviar aceptas ser contactado por 180 Degree Floors por llamada o mensaje al número que proporcionaste. Se habla inglés y español.</p>
+        <button class="submit-btn" type="submit">Enviar Solicitud →</button>
+      </form>
+      <div class="form-success" id="success-es">
+        <h3>¡Solicitud Recibida!</h3>
+        <p>Alguien de 180 Degree Floors te contactará en 24 horas.<br>Para hablar antes, llama al <strong>(615) 788-1379</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <h2>¿Listo Para Dejar<br>de Buscar Trabajo?<br><span class="accent">Llámanos.</span></h2>
+    <p class="final-sub">Middle Tennessee y Norte de Alabama &nbsp;·&nbsp; Inglés y español &nbsp;·&nbsp; Contestamos.</p>
+    <a class="phone-cta" href="tel:6157881379">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.25 7.64a16 16 0 006.11 6.11l1-1a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 15v1.92z"/></svg>
+      (615) 788-1379
+    </a>
+    <a class="btn-orange-center" href="sms:6157881379">Escribe "HIRE ME" para aplicar</a>
+  </section>
+
+  <footer>
+    <p><strong>180 Degree Floors</strong> &nbsp;·&nbsp; Nashville, Tennessee &nbsp;·&nbsp; (615) 788-1379<br>
+    Inglés y Español &nbsp;·&nbsp; Middle TN y Norte de Alabama &nbsp;·&nbsp; Con licencia y asegurados &nbsp;·&nbsp; Est. 2008</p>
+  </footer>
+
+</div><!-- /es -->
+
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════ -->
+<script>
+/* ── LANGUAGE TOGGLE ── */
+function setLang(l) {
+  document.getElementById('en').classList.toggle('hidden', l !== 'en');
+  document.getElementById('es').classList.toggle('hidden', l !== 'es');
+  document.querySelectorAll('.lang-btn').forEach(function(b, i) {
+    b.classList.toggle('active', (l === 'en' && i === 0) || (l === 'es' && i === 1));
+  });
+  var sm = document.getElementById('s-msg');
+  var sc = document.getElementById('s-cta');
+  if (l === 'es') {
+    sm.innerHTML = 'Trabajo constante. Pago semanal. <span>Middle TN y Norte de AL.</span>';
+    sc.textContent = 'Llama ahora';
+    document.documentElement.lang = 'es';
+  } else {
+    sm.innerHTML = 'Steady work. Weekly pay. <span>Middle TN &amp; North AL.</span>';
+    sc.textContent = 'Call Now';
+    document.documentElement.lang = 'en';
+  }
+}
+
+/*
+ * ── SUPABASE SETUP (no CDN needed) ──
+ * 1. Create a free project at supabase.com
+ * 2. Create table "installer_applications" with columns:
+ *    id, created_at, name, phone, city, experience, trades, tools, insurance, language
+ * 3. Replace the two values below with your project credentials
+ */
+var SUPABASE_URL  = 'YOUR_SUPABASE_URL';   // e.g. https://xxxx.supabase.co
+var SUPABASE_ANON = 'YOUR_SUPABASE_ANON_KEY';
+
+async function submitForm(e, lang) {
+  e.preventDefault();
+  var form = document.getElementById('form-' + lang);
+  var data = { language: lang };
+
+  /* Collect text / select fields by id */
+  ['name','phone','city','exp','tools','ins'].forEach(function(key) {
+    var el = form.querySelector('[id*="' + key + '"]');
+    if (el) {
+      var map = { name:'name', phone:'phone', city:'city', exp:'experience', tools:'tools', ins:'insurance' };
+      data[map[key]] = el.value;
+    }
+  });
+
+  /* Collect checked trade boxes */
+  data.trades = Array.from(form.querySelectorAll('input[type=checkbox]:checked'))
+    .map(function(c){ return c.value; }).join(', ');
+
+  /* Send to Supabase via native fetch — no SDK needed */
+  if (SUPABASE_URL !== 'YOUR_SUPABASE_URL') {
+    try {
+      await fetch(SUPABASE_URL + '/rest/v1/installer_applications', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON,
+          'Authorization': 'Bearer ' + SUPABASE_ANON,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify(data)
+      });
+    } catch(err) {
+      console.warn('Supabase submission error:', err);
+    }
+  } else {
+    /* Dev mode — log until credentials are added */
+    console.log('Form data (add Supabase credentials to save):', data);
+  }
+
+  /* Always show success to the user */
+  form.style.display = 'none';
+  document.getElementById('success-' + lang).style.display = 'block';
+}
+</script>
+
+</body>
+</html>
